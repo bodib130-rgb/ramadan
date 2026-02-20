@@ -221,6 +221,9 @@
 <body>
   <div class="sky"></div>
 
+  <!-- ✅ الأغنية: ضع song.mp3 بجانب index.html -->
+  <audio id="bgSong" src="song.mp3" preload="auto"></audio>
+
   <!-- زينة -->
   <div class="garland">
     <div class="rope"></div>
@@ -236,8 +239,8 @@
     <div class="lockCard">
       <h2 class="lockTitle">🌙 رابع رمضان لينا سوا ❤️</h2>
       <p class="lockHint">
-        اكتبي الباسورد يقلب بابا يسافله ✨<br>
-        (الباسورد7572 غششتك)
+        اكتبي الباسورد عشان الهدية تفتح ✨<br>
+        (الباسورد: 7572)
       </p>
       <div class="row">
         <input id="pass" type="password" placeholder="اكتبي كلمة السر هنا…" />
@@ -245,7 +248,7 @@
       </div>
       <div class="msg" id="msg"></div>
       <div class="tiny">
-        بحبك: <b>const PASSWORD = "..."</b>
+        بحبك ❤️
       </div>
     </div>
   </section>
@@ -255,10 +258,12 @@
     <div class="card">
       <div class="content">
         <div class="pill"><span class="moon"></span> رمضان كريم يا أجمل قلب</div>
-        <h1ل خوختي ❤️</h1>
+
+        <h1>لـ خوختي ❤️</h1>
+
         <p class="sub">
           في رمضان… الدعوة بتطلع من القلب أسرع 🌙  
-          وأنا بدعي ربنا يجعلك من نصيبي ف اقرب وقت انا بحبك والله بس انتي اللي قليلة الادب ✨
+          وأنا بدعي ربنا يكتبلك السعادة والراحة، ويجمعنا على خير دايمًا ✨
         </p>
 
         <div class="grid">
@@ -266,20 +271,23 @@
             <h2>رسالة ليكي</h2>
             <p class="sub" style="margin:0">
               وجودِك في حياتي زي هلال رمضان… بيخلّي كل حاجة أهدى وأجمل.  
-            على قلبي كل سنة وإنتِ طيبة يا أجمل نعمة ❤️
+              كل سنة وإنتِ طيبة يا أجمل نعمة ❤️
             </p>
 
             <div class="btns">
               <button class="danger" id="surpriseBtn">مفاجأة ❤️</button>
               <button class="secondary" id="duaBtn">دعوة ليكي 🤲</button>
               <button class="primary" id="sparkBtn">زودّي القلوب ✨</button>
+
+              <!-- ✅ زر تشغيل الأغنية -->
+              <button class="secondary" id="musicBtn">شغّلي أغنية 🎵</button>
             </div>
           </div>
 
           <div class="box">
             <h2>زينة رمضان</h2>
             <p class="sub" style="margin:0">
-              لبحبك
+              ربنا يديم ضحكتك ونورك… ويخليكي ليا دايمًا ❤️
             </p>
             <p class="sub" style="margin-top:10px">
               ❤️🌙✨
@@ -288,7 +296,7 @@
         </div>
 
         <div style="text-align:center; margin-top:14px; color:#ffffffaa; font-size:13px">
-          بموت ف امك 🌙❤️
+          اتعملت مخصوص عشانك 🌙❤️
         </div>
       </div>
     </div>
@@ -296,7 +304,7 @@
 
   <script>
     // ✅ غيّر كلمة السر من هنا
-    const PASSWORD = "7572"; // مثال: خليها كلمة بينكم
+    const PASSWORD = "7572";
 
     const lockScreen = document.getElementById("lockScreen");
     const mainContent = document.getElementById("mainContent");
@@ -333,7 +341,7 @@
 
     // أزرار
     document.getElementById("surpriseBtn").addEventListener("click", ()=>{
-      alert("المفاجاه ان بحبك ❤️🌙");
+      alert("المفاجأة؟ إنك أجمل حاجة حصلتلي ❤️🌙");
     });
     document.getElementById("duaBtn").addEventListener("click", ()=>{
       alert("اللهم احفظها وأسعد قلبها وحقق لها كل اللي تتمناه 🤲✨");
@@ -341,7 +349,24 @@
     document.getElementById("sparkBtn").addEventListener("click", ()=>{
       for(let i=0;i<18;i++) setTimeout(spawnHeart, i*60);
     });
+
+    // ✅ تشغيل/إيقاف الأغنية
+    const song = document.getElementById("bgSong");
+    const musicBtn = document.getElementById("musicBtn");
+
+    musicBtn.addEventListener("click", async () => {
+      try{
+        if(song.paused){
+          await song.play();
+          musicBtn.textContent = "وقّفي الأغنية ⏸";
+        }else{
+          song.pause();
+          musicBtn.textContent = "شغّلي أغنية 🎵";
+        }
+      }catch(e){
+        alert("المتصفح مانع تشغيل الصوت… اضغطي على زر الأغنية تاني 🎵");
+      }
+    });
   </script>
 </body>
-
 </html>
