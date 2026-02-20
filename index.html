@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>هدية رمضان 🌙❤️</title>
+  <style>
+    :root{
+      --bg1:#06131c; --bg2:#0b1f2c; --bg3:#1a1035;
+      --card:#0b1426cc; --txt:#f7f7ff; --muted:#cfd3ff;
+      --gold:#ffd27a; --mint:#47d18c; --pink:#ff4d8d;
+      --line:#ffffff22;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial;
+      color:var(--txt); min-height:100vh; overflow-x:hidden;
+      background:
+        radial-gradient(700px 400px at 15% 10%, #47d18c22, transparent 60%),
+        radial-gradient(800px 500px at 85% 15%, #ffd27a22, transparent 60%),
+        radial-gradient(900px 700px at 50% 120%, #ff4d8d1f, transparent 60%),
+        linear-gradient(135deg, var(--bg1), var(--bg2) 45%, var(--bg3));
+    }
+
+    /* زينة / شراشيب */
+    .garland{
+      position:fixed; inset:0 0 auto 0;
+      height:150px; pointer-events:none;
+      z-index:5;
+      filter: drop-shadow(0 10px 18px #00000055);
+    }
+    .rope{
+      position:absolute; left:-5%; right:-5%; top:12px;
+      height:84px;
+      border-bottom: 4px solid #ffffff55;
+      border-radius: 0 0 90% 90%;
+      transform: rotate(-1deg);
+    }
+    .tassels{
+      position:absolute; left:0; right:0; top:46px;
+      display:flex; justify-content:space-evenly; gap:14px;
+      padding:0 10px;
+    }
+    .tassel{
+      width:22px; height:60px;
+      background: linear-gradient(180deg, #ffffff, var(--gold));
+      border-radius: 0 0 12px 12px;
+      position:relative; opacity:.9;
+      transform-origin: top center;
+      animation: swing 2.7s ease-in-out infinite;
+    }
+    .tassel::before{
+      content:"";
+      position:absolute; top:-10px; left:50%;
+      width:14px; height:14px;
+      background: radial-gradient(circle at 30% 30%, #fff, #8fffd0);
+      border-radius:50%;
+      transform: translateX(-50%);
+      border: 1px solid #ffffff66;
+    }
+    .tassel:nth-child(2n){ background: linear-gradient(180deg, #ffffff, var(--pink)); animation-duration: 3.1s;}
+    .tassel:nth-child(3n){ background: linear-gradient(180deg, #ffffff, var(--mint)); animation-duration: 2.9s;}
+    @keyframes swing{ 0%,100%{transform: rotate(-5deg)} 50%{transform: rotate(5deg)} }
+
+    /* نجوم/فوانيس */
+    .sky{
+      position:fixed; inset:0;
+      pointer-events:none;
+      z-index:1;
+      opacity:.55;
+      background-image:
+        radial-gradient(2px 2px at 10% 20%, #fff, transparent 60%),
+        radial-gradient(2px 2px at 30% 40%, #fff, transparent 60%),
+        radial-gradient(1.5px 1.5px at 50% 15%, #fff, transparent 60%),
+        radial-gradient(2px 2px at 70% 30%, #fff, transparent 60%),
+        radial-gradient(1.5px 1.5px at 90% 25%, #fff, transparent 60%),
+        radial-gradient(2px 2px at 20% 75%, #fff, transparent 60%),
+        radial-gradient(1.5px 1.5px at 60% 80%, #fff, transparent 60%),
+        radial-gradient(2px 2px at 85% 70%, #fff, transparent 60%);
+      animation: twinkle 3.2s ease-in-out infinite;
+    }
+    @keyframes twinkle{ 0%,100%{opacity:.45} 50%{opacity:.7} }
+
+    .wrap{
+      position:relative; z-index:2;
+      max-width:980px;
+      margin:0 auto;
+      padding:175px 18px 42px;
+    }
+    .card{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:22px;
+      box-shadow: 0 18px 55px #00000066;
+      backdrop-filter: blur(12px);
+      overflow:hidden;
+      position:relative;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: conic-gradient(from 180deg, #ffd27a55, #47d18c55, #ff4d8d55, #ffd27a55);
+      filter: blur(22px);
+      opacity:.35;
+      z-index:0;
+    }
+    .content{ position:relative; z-index:1; }
+
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#06131c88;
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:12px;
+    }
+    .moon{
+      width:14px; height:14px; border-radius:50%;
+      box-shadow: -4px 0 0 0 var(--gold);
+      display:inline-block;
+    }
+
+    h1{margin:4px 0 10px; font-size:34px}
+    .sub{margin:0 0 16px; color:var(--muted); line-height:1.9}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:14px;
+      margin-top:16px;
+    }
+    @media (max-width: 820px){ .grid{grid-template-columns:1fr} .wrap{padding-top:165px} }
+
+    .box{
+      background:#06131c88;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+    }
+    .box h2{margin:0 0 10px; font-size:18px; color:var(--gold)}
+    .btns{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+
+    button{
+      border:none; cursor:pointer;
+      padding:12px 14px;
+      border-radius:14px;
+      font-size:15px;
+      box-shadow: 0 10px 20px #00000055;
+    }
+    .primary{
+      background: linear-gradient(90deg, var(--gold), #fff);
+      color:#06131c;
+    }
+    .secondary{
+      background: linear-gradient(90deg, var(--mint), #8fffd0);
+      color:#06131c;
+    }
+    .danger{
+      background: linear-gradient(90deg, var(--pink), #ff79b0);
+      color:white;
+    }
+
+    /* قلوب طايرة */
+    .heart{
+      position:fixed; bottom:-20px;
+      font-size:18px; opacity:.8;
+      animation: floatUp linear forwards;
+      pointer-events:none; z-index:3;
+      filter: drop-shadow(0 8px 10px #00000055);
+    }
+    @keyframes floatUp{
+      from{ transform: translateY(0) translateX(0) scale(1); opacity:.9;}
+      to{ transform: translateY(-110vh) translateX(var(--dx)) scale(1.7); opacity:0;}
+    }
+
+    /* شاشة الباسورد */
+    .lock{
+      position:fixed; inset:0;
+      display:grid; place-items:center;
+      z-index:10;
+      background:
+        radial-gradient(900px 600px at 20% 10%, #ffd27a1f, transparent 60%),
+        radial-gradient(900px 700px at 80% 20%, #47d18c1c, transparent 60%),
+        linear-gradient(135deg, #040914cc, #071426ee);
+      backdrop-filter: blur(8px);
+      padding:18px;
+    }
+    .lockCard{
+      width:min(560px, 92vw);
+      background:#06131ce6;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:22px;
+      box-shadow: 0 22px 60px #00000088;
+    }
+    .lockTitle{font-size:22px; margin:0 0 8px}
+    .lockHint{color:var(--muted); margin:0 0 14px; line-height:1.8}
+    .row{display:flex; gap:10px; flex-wrap:wrap}
+    input{
+      flex:1;
+      min-width:220px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:#0b1426;
+      color:var(--txt);
+      outline:none;
+      font-size:15px;
+    }
+    .msg{margin-top:10px; min-height:20px; color:#ffd27a}
+    .tiny{font-size:12px; color:#ffffff88; margin-top:10px; line-height:1.7}
+
+    /* إخفاء المحتوى قبل الفتح */
+    #mainContent{ display:none; }
+  </style>
+</head>
+
+<body>
+  <div class="sky"></div>
+
+  <!-- زينة -->
+  <div class="garland">
+    <div class="rope"></div>
+    <div class="tassels">
+      <div class="tassel"></div><div class="tassel"></div><div class="tassel"></div><div class="tassel"></div>
+      <div class="tassel"></div><div class="tassel"></div><div class="tassel"></div><div class="tassel"></div>
+      <div class="tassel"></div><div class="tassel"></div><div class="tassel"></div>
+    </div>
+  </div>
+
+  <!-- شاشة القفل -->
+  <section class="lock" id="lockScreen">
+    <div class="lockCard">
+      <h2 class="lockTitle">🌙 هدية رمضان… بس بمفتاح صغير ❤️</h2>
+      <p class="lockHint">
+        اكتبي كلمة السر عشان الهدية تفتح ✨<br>
+        (خليها حاجة بينكم: لقب/تاريخ/كلمة بتحبوها)
+      </p>
+      <div class="row">
+        <input id="pass" type="password" placeholder="اكتبي كلمة السر هنا…" />
+        <button class="primary" id="openBtn">افتحي الهدية 🎁</button>
+      </div>
+      <div class="msg" id="msg"></div>
+      <div class="tiny">
+        ملاحظة: تقدر تغيّر كلمة السر من داخل الكود في سطر: <b>const PASSWORD = "..."</b>
+      </div>
+    </div>
+  </section>
+
+  <!-- المحتوى الحقيقي -->
+  <main class="wrap" id="mainContent">
+    <div class="card">
+      <div class="content">
+        <div class="pill"><span class="moon"></span> رمضان كريم يا أجمل قلب</div>
+        <h1>إلى حبيبتي الغالية ❤️</h1>
+        <p class="sub">
+          في رمضان… الدعوة بتطلع من القلب أسرع 🌙  
+          وأنا بدعي ربنا يكتب لك راحة بال وسعادة… ويخلّيك دايمًا بخير ✨
+        </p>
+
+        <div class="grid">
+          <div class="box">
+            <h2>رسالة ليكي</h2>
+            <p class="sub" style="margin:0">
+              وجودِك في حياتي زي هلال رمضان… بيخلّي كل حاجة أهدى وأجمل.  
+              كل سنة وإنتِ طيبة يا أجمل نعمة ❤️
+            </p>
+
+            <div class="btns">
+              <button class="danger" id="surpriseBtn">مفاجأة ❤️</button>
+              <button class="secondary" id="duaBtn">دعوة ليكي 🤲</button>
+              <button class="primary" id="sparkBtn">زودّي القلوب ✨</button>
+            </div>
+          </div>
+
+          <div class="box">
+            <h2>زينة رمضان</h2>
+            <p class="sub" style="margin:0">
+              لو تحب نضيف: صورة، أغنية هادية، أو عدّاد لأيامكم…  
+              قولّي ونعمله فورًا.
+            </p>
+            <p class="sub" style="margin-top:10px">
+              ❤️🌙✨
+            </p>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:14px; color:#ffffffaa; font-size:13px">
+          اتعملت مخصوص عشانها 🌙❤️
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // ✅ غيّر كلمة السر من هنا
+    const PASSWORD = "رمضان2026"; // مثال: خليها كلمة بينكم
+
+    const lockScreen = document.getElementById("lockScreen");
+    const mainContent = document.getElementById("mainContent");
+    const passInput = document.getElementById("pass");
+    const msg = document.getElementById("msg");
+
+    function openGift(){
+      const v = passInput.value.trim();
+      if(v === PASSWORD){
+        lockScreen.style.display = "none";
+        mainContent.style.display = "block";
+        msg.textContent = "";
+      }else{
+        msg.textContent = "كلمة السر غلط… جرّبي تاني ❤️";
+      }
+    }
+
+    document.getElementById("openBtn").addEventListener("click", openGift);
+    passInput.addEventListener("keydown", (e)=>{ if(e.key==="Enter") openGift(); });
+
+    // قلوب طايرة
+    const hearts = ["❤","💗","💖","💞","🌙","✨"];
+    function spawnHeart(){
+      const h = document.createElement("div");
+      h.className = "heart";
+      h.textContent = hearts[Math.floor(Math.random()*hearts.length)];
+      h.style.left = Math.random()*100 + "vw";
+      h.style.setProperty("--dx", (Math.random()*140 - 70) + "px");
+      h.style.animationDuration = (5 + Math.random()*3) + "s";
+      document.body.appendChild(h);
+      setTimeout(()=> h.remove(), 8500);
+    }
+    setInterval(spawnHeart, 650);
+
+    // أزرار
+    document.getElementById("surpriseBtn").addEventListener("click", ()=>{
+      alert("أجمل مفاجأة؟ إنك في حياتي ❤️🌙");
+    });
+    document.getElementById("duaBtn").addEventListener("click", ()=>{
+      alert("اللهم احفظها وأسعد قلبها وحقق لها كل اللي تتمناه 🤲✨");
+    });
+    document.getElementById("sparkBtn").addEventListener("click", ()=>{
+      for(let i=0;i<18;i++) setTimeout(spawnHeart, i*60);
+    });
+  </script>
+</body>
+</html>
